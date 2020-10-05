@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <form name="juego" class="w-50 bg-light border boreder-primary p-5 mt-2">
+  
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h3>Palabra desordenada: </h3>  
+        </div>
+      </div>            
+      
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <input [(ngModel)]="palabra" name="palabra" type="text" class="form-control" readonly/>
+        </div>
+      </div>
+
+      <div class="row mt-4 justify-content-center">
+        <div class="col-md-10">
+          <h3>Ingrese respuesta: </h3>  
+        </div>
+      </div>            
+      
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <input [(ngModel)]="respuesta" autocomplete="off" name="respuesta" type="text" class="form-control"/>
+        </div>
+      </div>
+
+      <div class="row mt-3 justify-content-center">
+        <button class="btn btn-lg btn-primary" (click)="verificar()">
+          Verificar respuesta
+        </button>
+      </div>
+
+      <div *ngIf="verificado" class="row mt-3 justify-content-center">
+        <button class="btn btn-lg btn-primary" (click)="limpiar()">
+          Jugar de nuevo
+        </button>
+      </div>
+
+      <div class="row mt-3 justify-content-center">
+        <h3 *ngIf="gano && verificado">La respuesta es correcta!</h3>
+        <h3 *ngIf="!gano && verificado">La respuesta es incorrecta!</h3>
+      </div>  
+    </form>
+  </div>  
+</div>

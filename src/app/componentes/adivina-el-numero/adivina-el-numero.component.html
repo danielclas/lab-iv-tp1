@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div style="text-align:center">
+  <h1>
+    {{nuevoJuego.nombre}}!
+  </h1>
+</div>
+
+<div class="row justify-content-center">
+  <form name="juego" class="w-50 bg-light border boreder-primary p-5 mt-2">
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3>Ingrese número:</h3>  
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control"/>
+      </div>
+    </div>
+    <h1>{{nuevoJuego.numeroIngresado}}  </h1>
+
+    <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
+
+    <h2><button *ngIf="nuevoJuego.numeroSecreto==0 " (click)="generarnumero()"  class="btn btn-info btn-lg">Nuevo número secreto</button></h2>
+
+    <h2><p *ngIf="nuevoJuego.numeroSecreto!=0" ><i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p></h2>
+
+    <h3 [hidden]="!nuevoJuego.gano">Felicitaciones! Usted ha ganado</h3>
+    <h3 [hidden]="nuevoJuego.gano">Siga intentando</h3>
+
+
+  </form>
+  <div id="snackbar">{{Mensajes}}</div>
+</div> 

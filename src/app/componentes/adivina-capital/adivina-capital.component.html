@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <form name="juego" class="w-50 bg-light border boreder-primary p-5 my-2">
+    
+        <div class="row justify-content-start">
+            <h1>Adivina la capital</h1>  
+        </div>           
+
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="card mb-4 shadow-sm bg-light">
+                    <img src="{{preguntas[indicePreguntas].bandera}}" height="250" width="auto">
+                    <div class="card-body">
+                        <h5>{{preguntas[indicePreguntas].nombre}}</h5>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 p-3 justify-content-center">
+                                <button (click)="comprobar(0)" class="btn btn-primary">{{preguntas[indicePreguntas].opciones[0]}}</button>
+                            </div>
+                            <div class="col-md-6 p-3 justify-content-center">
+                                <button (click)="comprobar(1)" class="btn btn-primary">{{preguntas[indicePreguntas].opciones[1]}}</button>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 p-3 justify-content-center">
+                                <button (click)="comprobar(2)" class="btn btn-primary">{{preguntas[indicePreguntas].opciones[2]}}</button>
+                            </div>
+                            <div class="col-md-6 p-3 justify-content-center">
+                                <button (click)="comprobar(3)" class="btn btn-primary">{{preguntas[indicePreguntas].opciones[3]}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-start">
+            <h3>Correctas: {{correctas}}</h3>
+        </div>
+        <div class="row justify-content-start">
+            <h3>Erradas: {{erradas}}</h3>
+        </div>
+        <div *ngIf="terminado" class="row justify-content-start">
+            <h3>Juego terminado!</h3>
+            <button (click)="reiniciar()" class="mx-2 btn btn-primary">
+                Volver a jugar
+            </button>
+        </div>
+      </form>
+    </div>  
+  </div>

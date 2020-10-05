@@ -1,0 +1,22 @@
+
+<div *ngIf="listado" class="row justify-content-center px-5">
+  <table class="table table-condensed w-50 bg-light  border border-secondary">
+      <thead>
+        <tr>
+          <th>Juego</th>
+          <th>Jugador</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let juego of listado">
+          <td>{{juego.nombre}} </td>
+          <td>{{juego.jugador}} </td> 
+          <td>{{juego.resultado}}</td>     
+        </tr>       
+      </tbody>
+    </table>
+</div>
+<div *ngIf="showSpinner" class="row justify-content-center">
+  <img src="./../../../assets/spinner.gif" style="height: 300px; width: auto;">
+</div>

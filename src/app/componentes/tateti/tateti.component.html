@@ -1,0 +1,56 @@
+<div class="container">     
+    <div  class="row justify-content-center">
+      <div  class="row justify-content-center">
+        <div *ngIf="!botonesEleccion" class="col-12">
+          <h3>Seleccione una figura</h3>
+        </div>
+        <div  class="row justify-content-center">
+          <div *ngIf="!botonesEleccion" class="col-12 w-50">
+            <button (click)="eleccionSigno('X')"><img src="assets/X.png" border="0" name="rc9"></button>
+            <button (click)="eleccionSigno('O')"><img src="assets/O.png" border="0" name="rc9"></button>
+          </div>    
+        </div>
+      </div>
+      <div *ngIf="!botonesJuego" class="row w-50 py-4 justify-content-center">
+          <div class="col-12 justify-content-center">
+              <button  id="botonUno" (click)="modificar(0)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc0" name="rc0"></button>
+              <button id="botonDos" (click)="modificar(1)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc1" name="rc1"></button>
+              <button id="botonTres" (click)="modificar(2)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc2" name="rc2"></button>
+              
+          </div>
+          <div class="col-12 justify-content-center">
+              <button id="botonCuatro"(click)="modificar(3)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc3" name="rc3"></button>
+              <button id="botonCinco" (click)="modificar(4)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc4" name="rc4"></button>
+              <button id="botonSeis" (click)="modificar(5)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc5" name="rc5"></button>
+              
+          </div>
+          <div class="col-12 justify-content-center">
+
+              <button id="botonSiete"(click)="modificar(6)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc6" name="rc6"></button>
+              <button id="botonOcho" (click)="modificar(7)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc7" name="rc7"></button>
+              <button id="botonNueve" (click)="modificar(8)" [disabled]="band==true"><img src="assets/nothing.gif" id="rc8" name="rc8"></button>
+          </div>       
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-2 w-50">
+      <div [hidden]="terminoJuego">
+        <button color="warn" class="btn btn-lg" (click)="reiniciarJuego()">Reiniciar juego</button>
+      </div>
+      <div *ngIf="nuevoJuego.resultado == 'Perdio'">
+        <div class="alert alert-danger" role="alert">
+          Derrota
+        </div>
+      </div>
+      <div *ngIf="nuevoJuego.resultado == 'Empate'">
+        <div class="alert alert-warning" role="alert">
+          Empate
+        </div>
+      </div>
+      <div *ngIf="nuevoJuego.resultado == 'Gano'">
+        <div class="alert alert-success" role="alert">
+          Victoria
+        </div>
+      </div>
+    </div>    
+</div>

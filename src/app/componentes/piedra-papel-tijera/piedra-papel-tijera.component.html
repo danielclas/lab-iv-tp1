@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <form name="juego" class="w-50 bg-light border boreder-primary p-5 mt-2">
+    
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <h3>Elija una opcion: </h3>  
+          </div>
+        </div>           
+
+        <div class="row my-3 justify-content-center">
+            <div class="col-2"><button [ngClass]="respuesta ? 'btn btn-secondary' : 'btn btn-primary'" (click)="comprobar('piedra')">
+                Piedra
+            </button></div>
+            <div class="col-2" ><button [ngClass]="respuesta ? 'btn btn-secondary' : 'btn btn-primary'" (click)="comprobar('papel')">
+                Papel
+            </button></div>
+            <div class="col-2" ><button [ngClass]="respuesta ? 'btn btn-secondary' : 'btn btn-primary'" (click)="comprobar('tijera')">
+                Tijera
+            </button></div>
+        </div>
+
+        <div *ngIf="this.respuesta" class="row justify-content-center my-3">
+            <button (click)="jugarDeNuevo()" class="btn btn-primary">
+                Jugar de nuevo
+            </button>
+        </div>
+        <div class="row">
+            <h3 *ngIf="gano && respuesta">Usted ganó! La computadora había elegido {{elegido}}</h3>
+            <h3 *ngIf="!gano && respuesta">Usted no ganó! La computadora había elegido {{elegido}}</h3>
+        </div>
+      </form>
+    </div>  
+  </div>

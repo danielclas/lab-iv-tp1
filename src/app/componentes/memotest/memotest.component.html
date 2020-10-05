@@ -1,0 +1,43 @@
+
+<div class="row mt-3 justify-content-center">
+    <h4>Memotest {{mensajeVictoria}}</h4>
+</div>
+<div class="row justify-content-center">
+    <div class="row">
+        <div class="col-12">
+            <div [ngStyle]="estilos[0][0]" (click)="revelarColor(0,0)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[0][1]" (click)="revelarColor(0,1)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[0][2]" (click)="revelarColor(0,2)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[0][3]" (click)="revelarColor(0,3)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div [ngStyle]="estilos[1][0]" (click)="revelarColor(1,0)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[1][1]" (click)="revelarColor(1,1)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[1][2]" (click)="revelarColor(1,2)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[1][3]" (click)="revelarColor(1,3)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div [ngStyle]="estilos[2][0]" (click)="revelarColor(2,0)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[2][1]" (click)="revelarColor(2,1)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[2][2]" (click)="revelarColor(2,2)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[2][3]" (click)="revelarColor(2,3)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div [ngStyle]="estilos[3][0]" (click)="revelarColor(3,0)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[3][1]" (click)="revelarColor(3,1)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[3][2]" (click)="revelarColor(3,2)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+            <div [ngStyle]="estilos[3][3]" (click)="revelarColor(3,3)" class="border border-secondary" style="width: 100px; height: 100px; background-color: transparent;"></div>
+        </div>
+    </div>
+</div>
+<div class="row mt-4 justify-content-center">
+    <button *ngIf="mensajeVictoria != ''" (click)="reiniciarJuego()" class="btn btn-lg btn-primary">
+        Empezar un nuevo juego
+    </button>
+</div>

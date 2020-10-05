@@ -1,0 +1,27 @@
+
+<div class="row justify-content-center">
+  <form name="juego" class="bg-light border boder-primary p-4 w-50">
+  <ul>
+    <li>
+    Primer número: <input [(ngModel)]="nuevoJuego.primerNumero" name="primerNumero" type="text" class="form-control my-1" style="width:50%" readonly/>
+    
+    </li>
+    <li>
+    Operador: <input [(ngModel)]="nuevoJuego.operador" name="operador" type="text" class="form-control  my-1" style="width:50%" readonly/>
+      
+    </li>
+    <li>
+    Segundo número: <input [(ngModel)]="nuevoJuego.segundoNumero" name="segundoNumero" type="text" class="form-control  my-1" style="width:50%" readonly/>  
+    </li>
+    <li>
+      Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="Ingrese numero" name="numeroIngresado" type="text" class="form-control my-1" style="width:50%"/>
+    </li>  
+  </ul>
+    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
+    <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>    
+    <h2 *ngIf="!nuevoJuego.numeroIngresado && nuevoJuego"><p><i class="fa fa-spinner fa-spin my-2"></i>Esperando numero...</p></h2>
+    <h3 *ngIf="nuevoJuego.gano">Usted adivino el número!</h3>
+    <h3 *ngIf="!nuevoJuego.gano">Usted aún no gano </h3>
+
+  </form>
+</div>
