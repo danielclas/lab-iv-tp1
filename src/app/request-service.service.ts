@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RequestService {
 
-  url: string = "http://restcountries.eu/rest/v2/all";
+  url: string = "https://restcountries.eu/rest/v2/all";
 
   constructor(private http: HttpClient) { }
 
